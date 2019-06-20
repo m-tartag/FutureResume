@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const passport = require('passport');
 const port = process.env.Port || 4000;
 const keys = require('./config/keys');
 
@@ -16,6 +17,11 @@ mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoDBUrl, { useNewUrlParser: true }).then(()=>{
     console.log(`MongoDB Connected`)
 })
+
+// Passport middleware
+app.use(passport.initialize());
+//Passport Config
+require('./config/passport')(passport);
 
 app.listen(port, err =>{
     if (err) throw err 
