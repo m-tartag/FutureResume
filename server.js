@@ -23,6 +23,8 @@ app.use(passport.initialize());
 // Passport Config
 require('./config/passport')(passport);
 
+// API
+
 app.get('/', (req, res) => {
   res.send('API Running');
 });
