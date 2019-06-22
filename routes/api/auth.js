@@ -2,11 +2,11 @@ const express = require('express');
 
 const router = express.Router();
 
-// @route     GET api/posts
+// @route     GET api/auth
 // @desc      Test Route
-// @access    Pubic
+// @access    Private
 router.get('/', (req, res) => {
-  res.send('Posts Route');
+  res.send('Auth');
 });
 
 module.exports = router;
