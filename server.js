@@ -22,6 +22,16 @@ app.use(passport.initialize());
 // Passport Config
 require('./config/passport')(passport);
 
+app.get('/', (req, res) => {
+  res.send('API Running');
+});
+
+// Define Routes
+
+app.use('/api/register', require('./routes/api/register'));
+app.use('/api/login', require('./routes/api/login'));
+app.use('/api/auth', require('./routes/api/auth'));
+
 app.listen(port, err => {
   if (err) throw err;
   console.log(`App currently listening on port ${port}`);
