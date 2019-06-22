@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 
-const port = process.env.Port || 4000;
+const port = process.env.port || 4000;
 const keys = require('./config/keys');
 
 const app = express();
