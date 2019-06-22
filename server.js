@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
+const chalk = require('chalk');
 
 const port = process.env.port || 4000;
 const keys = require('./config/keys');
@@ -14,7 +15,7 @@ app.use(bodyParser.json());
 // Connect to MongoDB Atlas
 mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoDBUrl, { useNewUrlParser: true }).then(() => {
-  console.log(`MongoDB Connected`);
+  console.log(chalk.green.inverse(`MongoDB Connected`));
 });
 
 // Passport middleware
@@ -34,5 +35,5 @@ app.use('/api/auth', require('./routes/api/auth'));
 
 app.listen(port, err => {
   if (err) throw err;
-  console.log(`App currently listening on port ${port}`);
+  console.log(chalk.blue.inverse(`Server Connected (Port: ${port})`));
 });
