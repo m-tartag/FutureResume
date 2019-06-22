@@ -30,7 +30,7 @@ router.post(
     }),
   ],
 
-  // Use Async/Await
+  // Use Async/Await -- I try to avoid promises if I can
 
   async (req, res) => {
     const errors = validationResult(req);

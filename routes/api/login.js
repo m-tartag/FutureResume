@@ -5,7 +5,7 @@ const router = express.Router();
 // @route     POST api/login
 // @desc      Test Route
 // @access    Public
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
   res.send('Login');
 });
 
