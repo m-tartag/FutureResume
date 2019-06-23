@@ -1,14 +1,14 @@
 const Validator = require("validator");
-const isEmpty = require("./is-empty");
+const isEmpty = require('../validation/is-empty');
 
-module.exports = validateResumeInput = data => {
+module.exports = function validateResumeInput (data) {
   let errors = {};
   data.firstName = !isEmpty(data.firstName) ? data.firstName : "";
   data.lastName = !isEmpty(data.lastName) ? data.lastName : "";
   data.address = !isEmpty(data.address) ? data.address : "";
   data.city = !isEmpty(data.city) ? data.city : "";
   data.state = !isEmpty(data.state) ? data.state : "";
-  data.zipcode = !isEmpty(data.zipcode) ? data.zipcode : "";
+  data.zipCode = !isEmpty(data.zipCode) ? data.zipCode : "";
   data.personalEmail = !isEmpty(data.personalEmail) ? data.personalEmail : "";
   data.githubURL = !isEmpty(data.githubURL) ? data.githubURL : "";
   data.twitterURL = !isEmpty(data.twitterURL) ? data.twitterURL : "";
@@ -24,18 +24,18 @@ module.exports = validateResumeInput = data => {
     errors.address = "Address field is required";
   }
   if (Validator.isLength(data.address, { min: 4, max: 40 })) {
-    errors.firstName = "Address must be between 4 and 40 characters";
+    errors.address = "Address must be between 4 and 40 characters";
   }
   if (Validator.isEmpty(data.city)) {
     errors.city = "City field is required";
   }
-  if (Validator.isEmpty(data.zipcode)) {
-    errors.zipcode = "Zipcode field is required";
+  if (Validator.isEmpty(data.zipCode)) {
+    errors.zipCode = "Zipcode field is required";
   }
   if (!Validator.isEmail(data.personalEmail)) {
     errors.personalEmail = "Invalid Email Address";
   }
-  if (Validator.isEmpty(data.personEmail)) {
+  if (Validator.isEmpty(data.personalEmail)) {
     errors.personEmail = "Email field is required";
   }
   if (!Validator.isURL(data.githubURL, {})) {
