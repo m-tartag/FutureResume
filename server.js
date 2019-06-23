@@ -9,7 +9,7 @@ const keys = require('./config/keys');
 
 const app = express();
 // Middleware BodyParser
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Connect to MongoDB Atlas
@@ -34,6 +34,8 @@ app.get('/', (req, res) => {
 app.use('/api/register', require('./routes/api/register'));
 app.use('/api/login', require('./routes/api/login'));
 app.use('/api/auth', require('./routes/api/auth'));
+app.use('/api/resume', require('./routes/api/resume'));
+
 
 app.listen(port, err => {
   if (err) throw err;
