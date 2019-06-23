@@ -4,10 +4,11 @@ import React, { Component } from 'react';
 class ResumeForm extends Component {
     render() {
         return (
-            <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s4">
+            <div class="row " >
+               <h3 class="align center">Insert Resume Details</h3>
+    <form class="col s6 offset-m3" >
+      <div class="row ">
+        <div class="input-field ">
           <input placeholder="First Name" id="first_name" type="text" class="validate" />
         
           <input placeholder="Last Name" id="first_name" type="text" class="validate" />
