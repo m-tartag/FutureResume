@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 
 class ResumeForm extends Component {
+<<<<<<< HEAD
   constructor() {
     super();
     this.state = {
@@ -51,7 +52,8 @@ class ResumeForm extends Component {
     return (
       
       <div class="row">
-        <form class="col s12">
+      <h3 class="align center">Insert Resume Details</h3>
+      <form class="col s6 offset-m3" >
           <div class="row">
             <div class="input-field col s4">
               <input
