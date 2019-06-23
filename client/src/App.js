@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Landing from './components/layouts/Landing';
 import Navbar from './components/layouts/Navbar';
+import ResumeForm from './components/layouts/ResumeForm';
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
       <div className="App">
         <Navbar />
         <Landing />
+        {/* <ResumeForm /> */}
       </div>
       </Router>
     )
