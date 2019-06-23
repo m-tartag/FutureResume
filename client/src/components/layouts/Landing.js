@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 
 class Landing extends Component {
@@ -10,7 +11,8 @@ class Landing extends Component {
             <div>
                 <h1 className="col s7center align" >Future Resume</h1>
             </div>
-            <a class="waves-effect waves-light btn-large" style={{margin: "5px"}}>Register</a>
+            <Link to ='/resumeform'
+            class="waves-effect waves-light btn-large" style={{margin: "5px"}}>Register</Link>
             <a class="waves-effect waves-light btn-large blue" style={{margin: "5px"}}>Login</a>
             </div>
             </div>
