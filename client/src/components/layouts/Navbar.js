@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import ResumeForm from './ResumeForm'
+import { Link } from 'react-router-dom'
+
 
 
 class NavBar extends Component {
@@ -10,9 +10,8 @@ class NavBar extends Component {
           <nav>
     <div class="nav-wrapper blue">
       <a href="#!" class="brand-logo center white-text">Future Resume</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Create Resume</a></li>
+        <li><Link to='/resumeform'>Create Resume</Link></li>
         <li><a href="#">About</a></li>
       </ul>
     </div>
