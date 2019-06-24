@@ -27,6 +27,7 @@ class ResumeForm extends Component {
       this.setState({
         errors: nextProps.errors
       });
+
     }
   }
   onChange = e => {
@@ -142,6 +143,9 @@ class ResumeForm extends Component {
                 class="materialize-textarea"
                 placeholder="About Me"
               />
+              <button class="btn waves-effect waves-light align right blue" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
             </div>
           </div>
         </form>
