@@ -13,7 +13,7 @@ class Landing extends Component {
             </div>
             <Link to ='/resumeform'
             class="waves-effect waves-light btn-large" style={{margin: "5px"}}>Register</Link>
-            <a class="waves-effect waves-light btn-large blue" style={{margin: "5px"}}>Login</a>
+            <Link to='/Login' class="waves-effect waves-light btn-large blue" style={{margin: "5px"}}>Login</Link>
             </div>
             </div>
             </div>

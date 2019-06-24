@@ -4,6 +4,7 @@ import Landing from './components/layouts/Landing';
 import Navbar from './components/layouts/Navbar';
 import ResumeForm from './components/layouts/ResumeForm';
 import About from './components/layouts/About';
+import Login from './components/layouts/Login'
 import './App.css';
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
         <Route exact path='/' component={Landing} />
           <Route exact path='/resumeform' component={ResumeForm} />
           <Route exact path="/about" component={About} />
+          <Route exact path='/login' component={Login} />
         {/* <ResumeForm /> */}
       </div>
       </Router>
