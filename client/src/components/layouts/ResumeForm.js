@@ -82,7 +82,7 @@ class ResumeForm extends Component {
                     isvalid: errors.firstName
                   })}
                 />
-                <label htmlFor="firstName">First Name</label>
+               
                 <span className="red-text">{errors.firstName}</span>
 
                 <input
