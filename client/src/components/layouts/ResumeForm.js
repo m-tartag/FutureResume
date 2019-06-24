@@ -28,6 +28,10 @@ class ResumeForm extends Component {
           <input placeholder="Twitter" id="first_name" type="text" class="validate" />
   
           <textarea id="textarea1" class="materialize-textarea" placeholder="About Me"></textarea>
+
+          <button class="btn waves-effect waves-light align right blue" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
        
         </div>
        
