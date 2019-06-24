@@ -12,14 +12,14 @@ class Landing extends Component {
             </div>
             <Link
               to="/Register"
-              class="waves-effect waves-light btn-large"
+              className="waves-effect waves-light btn-large"
               style={{ margin: "5px" }}
             >
               Register
             </Link>
             <Link
               to="/Login"
-              class="waves-effect waves-light btn-large blue"
+              className="waves-effect waves-light btn-large blue"
               style={{ margin: "5px" }}
             >
               Login
