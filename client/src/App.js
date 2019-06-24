@@ -4,6 +4,7 @@ import Landing from './components/layouts/Landing';
 import Navbar from './components/layouts/Navbar';
 import ResumeForm from './components/layouts/ResumeForm';
 import About from './components/layouts/About';
+import './App.css';
 
 class App extends Component {
   render() {

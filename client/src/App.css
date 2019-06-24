@@ -31,3 +31,9 @@
     transform: rotate(360deg);
   }
 }
+
+#About {
+  border: solid 5px black;
+  text-align: center;
+  margin: 30px;
+}
