@@ -18,8 +18,8 @@ class NavBar extends Component {
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="#">Create Resume</a></li>
-    <li><a href="#">About</a></li>
+    <li><a href="/resumeform">Create Resume</a></li>
+    <li><a href="/about">About</a></li>
   </ul>
           
         </div>

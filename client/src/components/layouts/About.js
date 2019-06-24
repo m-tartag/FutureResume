@@ -11,7 +11,7 @@ const About = () => {
           <li><a href="https://github.com/m-tartag">Matt Tartaglia</a></li>
           <li><a href="https://github.com/VicMontanez">Victor Montanez</a></li>
           <li><a href="https://github.com/Messinias1">Carl Kakisis</a></li>
-          <li><a href="#">Oscar Diahn</a></li>
+          <li><a href="/">Oscar Diahn</a></li>
         </ul>
       </div>
     </div>
