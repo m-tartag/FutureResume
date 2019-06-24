@@ -32,8 +32,14 @@
   }
 }
 
+/* About Page */
+
 #About {
   border: solid 5px black;
   text-align: center;
   margin: 30px;
+}
+
+#Team {
+  font-size: 20px;
 }
