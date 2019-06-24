@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
+import classnames from "classnames";
 
 class ResumeForm extends Component {
-<<<<<<< HEAD
   constructor() {
     super();
     this.state = {
@@ -29,7 +29,11 @@ class ResumeForm extends Component {
       });
     }
   }
-  postResume = () => {
+  onChange = e => {
+    this.setState({ [e.target.id]: e.target.value })
+  }
+
+  onSubmit = () => {
     // Data Payload
     const data = {
       firstName: this.state.firstName,
@@ -46,21 +50,29 @@ class ResumeForm extends Component {
       aboutMeStatement: this.state.aboutMeStatement
     };
 
-    axios.post("/api/resume", data);
+    
+    axios.post("/api/resume", data)
+    .then(resume => console.log(resume.data))
   };
   render() {
+    const { errors } = this.state;
     return (
-      
       <div class="row">
       <h3 class="align center">Insert Resume Details</h3>
       <form class="col s6 offset-m3" >
           <div class="row">
             <div class="input-field col s4">
               <input
+                onchange={this.onChange}
+                value={this.state.firstName}
+                error={errors.firstName}
                 placeholder="First Name"
                 id="first_name"
                 type="text"
                 class="validate"
+                className={classnames("", {
+                  isvalid: errors.firstName
+                })}
               />
 
               <input
