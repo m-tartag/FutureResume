@@ -36,7 +36,6 @@ app.use('/api/login', require('./routes/api/login'));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/resume', require('./routes/api/resume'));
 
-
 app.listen(port, err => {
   if (err) throw err;
   console.log(chalk.blue.inverse(`Server Connected (Port: ${port})`));
