@@ -9,10 +9,10 @@ class NavBar extends Component {
         <div className="App">
           <nav>
     <div class="nav-wrapper blue">
-      <a href="#!" class="brand-logo center white-text">Future Resume</a>
+      <a href="/" class="brand-logo center white-text">Future Resume</a>
       <ul class="right hide-on-med-and-down">
         <li><Link to='/resumeform'>Create Resume</Link></li>
-        <li><a href="#">About</a></li>
+        <li><Link to='/about'>About</Link></li>
       </ul>
     </div>
   </nav>
