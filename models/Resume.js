@@ -4,6 +4,10 @@ const { Schema } = mongoose;
 
 // Create Schema
 const ResumeSchema = new Schema({
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'users'
+  },
   firstName: {
     type: String,
     required: true,
@@ -36,16 +40,79 @@ const ResumeSchema = new Schema({
     type: String,
     required: true,
   },
-  githubURL: {
-    type: String,
-    required: true,
+  skills: {
+    type: [String],
+    required: true
   },
-  twitterURL: {
-    type: String,
-    required: true,
-  },
-  personalWebsiteURL: {
-    type: String,
+  experience: [
+    {
+    title: {
+      type: String,
+      required: true
+    },
+    company: {
+      type: String,
+      required: true
+    },
+    location: {
+      type: String
+    },
+    from: {
+      type: Date,
+      required: true
+    },
+    to: {
+      type: Date
+    },
+    current: {
+      type: Boolean,
+      default: false
+    },
+    jobDescription: {
+      type: String,
+      required: true
+    }
+  }
+],
+education: [
+  {
+    school: {
+      type: String,
+      required: true
+    },
+    degree: {
+      type: String,
+    },
+    fieldOfStudy:{
+      type: String,
+      required: true
+    },
+    from: {
+      type: Date,
+      required: true
+    },
+    to: {
+      type: Date,
+      required: true
+    }
+  }
+],
+  social: {
+    githubURL: {
+      type: String,
+      required: true,
+    },
+    twitterURL: {
+      type: String,
+      required: true,
+    },
+    linkedin: {
+      type: String
+    },
+    personalWebsiteURL: {
+      type: String,
+    },
+    
   },
   aboutMeStatement: {
     type: String,
