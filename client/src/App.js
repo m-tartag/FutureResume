@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Landing from "./components/layouts/Landing";
-import Navbar from "./components/layouts/Navbar";
-import ResumeForm from "./components/layouts/ResumeForm";
-import About from "./components/layouts/About";
-import Login from "./components/layouts/Login";
-import Register from "./components/layouts/Register";
-import RegisterUser from "./components/layouts/RegisterUser";
-import RegisterEmployer from "./components/layouts/RegisterEmployer";
+import {
+  About,
+  Landing,
+  Login,
+  Navbar,
+  Register,
+  RegisterEmployer,
+  RegisterUser,
+  ResumeForm
+} from './components/layouts'
 import "./App.css";
 
 class App extends Component {
