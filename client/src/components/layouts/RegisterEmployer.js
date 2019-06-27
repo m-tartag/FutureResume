@@ -36,7 +36,7 @@ const RegisterUser = () => {
           }
         }
         const body = JSON.stringify(newEmployer);
-        const res = await axios.post('http://localhost:3000/api/employer', body, config);
+        const res = await axios.post('http://localhost:4000/api/employer', body, config);
         console.log(res.data);
       } catch (err) {
         console.log(err.response.data)

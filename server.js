@@ -3,11 +3,16 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const chalk = require('chalk');
+const cors = require('cors');
 
 const port = process.env.port || 4000;
 const keys = require('./config/keys');
 
 const app = express();
+
+// Enable Cors
+app.use(cors());
+
 // Middleware BodyParser
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
