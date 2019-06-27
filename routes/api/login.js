@@ -9,6 +9,7 @@ const { check, validationResult } = require('express-validator')
 // const validateLoginInput = require("../../validation/login");
 
 const User = require("../../models/User");
+const Employer = require('../../models/Employer');
 
 // @route     POST api/login
 // @desc      Login Route
