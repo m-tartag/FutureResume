@@ -14,11 +14,7 @@ class Login extends Component {
     onSubmit(e) {
     e.preventDefault();
     alert('It works!')
-    };
-
-
-
-
+  };
   
   render() {
     return (
