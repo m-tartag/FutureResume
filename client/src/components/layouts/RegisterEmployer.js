@@ -7,11 +7,11 @@ const RegisterUser = () => {
     email: '',
     password: '',
     password2: '',
-    company: '',
-    title:'',
+    companyname: '',
+    position:'',
   });
 
-  const { name, email, password, password2, company, title } = formData;
+  const { name, email, password, password2, companyname, position } = formData;
   
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -26,8 +26,8 @@ const RegisterUser = () => {
         name,
         email,
         password, 
-        company, 
-        title,
+        companyname, 
+        position,
       }
       try {
         const config = {
@@ -81,20 +81,20 @@ const RegisterUser = () => {
                 data-success="right"
               /> */}
               <input
-                name='company'
-                value={company}
+                name='companyname'
+                value={companyname}
                 onChange={e => onChange(e)}
                 placeholder="Company"
-                id="company"
+                id="companyname"
                 type="text"
                 className="validate"
               />
               <input
-                name='title'
-                value={title}
+                name='position'
+                value={position}
                 onChange={e => onChange(e)}
                 placeholder="Title"
-                id="title"
+                id="position"
                 type="text"
                 className="validate"
               />

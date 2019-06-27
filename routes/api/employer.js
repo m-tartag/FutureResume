@@ -1,61 +1,61 @@
-const express = require("express");
+const express = require('express');
+
 const router = express.Router();
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const keys = require("../../config/keys");
-const { check, validationResult } = require("express-validator");
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const keys = require('../../config/keys');
+const { check, validationResult } = require('express-validator');
 
-const Employer = require("../../models/Employer");
+const Employer = require('../../models/Employer');
 
-//@route POST api/employer/register
-//@desc Register new employer account
-//@access Public
-router.post("/register", (req, res) => {
+// @route POST api/employer/register
+// @desc Register new employer account
+// @access Public
+router.post('/', (req, res) => {
   [
-    check("name", "Name field is required")
+    check('name', 'Name field is required')
       .not()
       .isEmpty(),
-    check("email", "Invalid E-mail").isEmail(),
-    check("email")
+    check('email', 'Invalid E-mail').isEmail(),
+    check('email')
       .not()
       .isEmpty()
-      .withMessage("Email field is required"),
+      .withMessage('Email field is required'),
     check(
-      "password",
-      "Password must contain a minimum of (6) characters"
+      'password',
+      'Password must contain a minimum of (6) characters'
     ).isLength({
-      min: 6
+      min: 6,
     }),
-    check("password")
+    check('password')
       .not()
       .isEmpty()
-      .withMessage("Password field is required"),
-    check("password2")
+      .withMessage('Password field is required'),
+    check('password2')
       .not()
       .isEmpty()
-      .withMessage("Please confirm your password"),
-    check("password2")
+      .withMessage('Please confirm your password'),
+    check('password2')
       .custom(() => {
         if (req.body.password === req.body.password2) {
           return true;
-        } else {
-          return false;
         }
+        return false;
       })
-      .withMessage("Password does not match"),
-    check("companyname")
+      .withMessage('Password does not match'),
+    check('companyname')
       .not()
       .isEmpty()
-      .withMessage("Company field is required"),
-    check("position")
+      .withMessage('Company field is required'),
+    check('position')
       .not()
       .isEmpty()
-      .withMessage("Position field is required")
+      .withMessage('Position field is required'),
   ];
   const errors = validationResult(req.body);
 
   if (!errors.isEmpty()) {
-    return res.status(400).json({  errors });
+    return res.status(400).json({ errors });
   }
 
   const newEmployer = new Employer({
@@ -64,7 +64,7 @@ router.post("/register", (req, res) => {
     password: req.body.password,
     password2: req.body.password2,
     companyname: req.body.companyname,
-    position: req.body.position
+    position: req.body.position,
   });
   // Hash password before saving in database
 
@@ -79,38 +79,38 @@ router.post("/register", (req, res) => {
   });
 });
 
-//@route POST api/employer/login
-//@desc Login for employer
-//@access Public
+// @route POST api/employer/login
+// @desc Login for employer
+// @access Public
 
-router.post("/login", (req, res) => {
+router.post('/login', (req, res) => {
   [
-    check("email", "Invalid E-mail").isEmail(),
-    check("email")
+    check('email', 'Invalid E-mail').isEmail(),
+    check('email')
       .not()
       .isEmpty()
-      .withMessage("Email field is required"),
+      .withMessage('Email field is required'),
     check(
-      "password",
-      "Password must contain a minimum of (6) characters"
+      'password',
+      'Password must contain a minimum of (6) characters'
     ).isLength({
-      min: 6
+      min: 6,
     }),
-    check("password")
+    check('password')
       .not()
       .isEmpty()
-      .withMessage("Password field is required")
+      .withMessage('Password field is required'),
   ];
 
   const errors = validationResult(req.body);
 
-  const email = req.body.email;
-  const password = req.body.password;
+  const { email } = req.body;
+  const { password } = req.body;
 
   Employer.findOne({ email }).then(employer => {
     // Check if email exists in DB
     if (!employer) {
-      return res.status(404).json({ emailNotFound: "Email was not found" });
+      return res.status(404).json({ emailNotFound: 'Email was not found' });
     }
     // Check password
     bcrypt.compare(password, employer.password).then(isMatch => {
@@ -123,17 +123,17 @@ router.post("/login", (req, res) => {
           payload,
           keys.secretOrKey,
           {
-            expiresIn: 3600 // 1 hour
+            expiresIn: 3600, // 1 hour
           },
           (err, token) => {
             res.json({
               success: true,
-              token: "Bearer " + token
+              token: `Bearer ${token}`,
             });
           }
         );
       } else {
-        errors.password = "Incorrect password";
+        errors.password = 'Incorrect password';
         return res.status(400).json(errors);
       }
     });
