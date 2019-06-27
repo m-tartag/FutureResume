@@ -34,6 +34,8 @@ app.get('/', (req, res) => {
 app.use('/api/register', require('./routes/api/register'));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/resume', require('./routes/api/resume'));
+app.use('/api/login', require('./routes/api/login'));
+app.use('/api/employer', require('./routes/api/employer'));
 
 app.listen(port, err => {
   if (err) throw err;
