@@ -1,43 +1,69 @@
-import React, { Component } from "react";
+import React, { Fragment, Component, useState } from "react";
 
-class Register extends Component {
-  render() {
-    return (
-      <div class="row ">
-        <h4 class="align center">Register</h4>
-        <form class="col s4 offset-m4">
-          <div class="row">
-            <div class="input-field">
+
+
+
+const Register = () => {
+  const[formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    password2: '',
+  });
+
+  const { name, email, password, password2 } = formData;
+  
+  const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value})
+
+
+
+  
+  return (
+      <Fragment>
+      <div className="row ">
+        <h4 className="align center">Register</h4>
+        <form className="col s4 offset-m4">
+          <div className="row">
+            <div className="input-field">
               <input
+                name='name'
                 placeholder="Name"
+                value={name}
+                onChange={e => onChange(e)}
                 id="name"
                 type="text"
-                class="validate"
+                className="validate"
               />
               <span
-                class="helper-text"
+                className="helper-text"
                 data-error="wrong"
                 data-success="right"
               />
               <input
+                name='email'
+                value={email}
+                onChange={e => onChange(e)}
                 placeholder="Email"
                 id="email"
                 type="email"
-                class="validate"
+                className="validate"
               />
               <span
-                class="helper-text"
+                className="helper-text"
                 data-error="wrong"
                 data-success="right"
               />
               <input
+                name='password'
+                value={password}
+                onChange={e => onChange(e)}
                 placeholder="Password"
                 id="password"
                 type="password"
-                class="validate"
+                className="validate"
               />
               <span
-                class="helper-text"
+                className="helper-text"
                 data-error="wrong"
                 data-success="right"
               />
@@ -57,8 +83,9 @@ class Register extends Component {
           </div>
         </form>
       </div>
+      </Fragment>
     );
   }
-}
+
 
 export default Register;

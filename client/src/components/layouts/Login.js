@@ -11,21 +11,30 @@ class Login extends Component {
       errors: {}
     };
   }
+    onSubmit(e) {
+    e.preventDefault();
+    alert('It works!')
+    };
+
+
+
+
+  
   render() {
     return (
-      <div class="row ">
-        <h4 class="align center">Login</h4>
-        <form class="col s4 offset-m4">
-          <div class="row ">
-            <div class="input-field ">
+      <div className="row ">
+        <h4 className="align center">Login</h4>
+        <form onSubmit={this.onSubmit} className="col s4 offset-m4">
+          <div className="row ">
+            <div className="input-field ">
               <input
                 placeholder="Email"
                 id="email"
                 type="email"
-                class="validate"
+                className="validate"
               />
               <span
-                class="helper-text"
+                className="helper-text"
                 data-error="wrong"
                 data-success="right"
               />
@@ -33,10 +42,10 @@ class Login extends Component {
                 placeholder="Password"
                 id="password"
                 type="password"
-                class="validate"
+                className="validate"
               />
               <span
-                class="helper-text"
+                className="helper-text"
                 data-error="wrong"
                 data-success="right"
               />
