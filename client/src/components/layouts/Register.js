@@ -1,7 +1,4 @@
-import React, { Fragment, Component, useState } from "react";
-
-
-
+import React, { Fragment, useState } from "react";
 
 const Register = () => {
   const[formData, setFormData] = useState({
@@ -13,16 +10,22 @@ const Register = () => {
 
   const { name, email, password, password2 } = formData;
   
-  const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value})
+  const onChange = e =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
 
+  const onSubmit = e => {
+    e.preventDefault();
+    if (password !== password2) {
+      console.log('Passwords do not match!');
+      alert('Passwords do not match!');
+    }
+  }
 
-
-  
   return (
       <Fragment>
       <div className="row ">
         <h4 className="align center">Register</h4>
-        <form className="col s4 offset-m4">
+        <form onSubmit={e => onSubmit(e)} className="col s4 offset-m4">
           <div className="row">
             <div className="input-field">
               <input
@@ -34,11 +37,11 @@ const Register = () => {
                 type="text"
                 className="validate"
               />
-              <span
+              {/* <span
                 className="helper-text"
                 data-error="wrong"
                 data-success="right"
-              />
+              /> */}
               <input
                 name='email'
                 value={email}
@@ -48,11 +51,11 @@ const Register = () => {
                 type="email"
                 className="validate"
               />
-              <span
+              {/* <span
                 className="helper-text"
                 data-error="wrong"
                 data-success="right"
-              />
+              /> */}
               <input
                 name='password'
                 value={password}
@@ -62,10 +65,19 @@ const Register = () => {
                 type="password"
                 className="validate"
               />
-              <span
+              {/* <span
                 className="helper-text"
                 data-error="wrong"
                 data-success="right"
+              /> */}
+              <input
+                name='password2'
+                value={password2}
+                onChange={e => onChange(e)}
+                placeholder="Password"
+                id="password"
+                type="password"
+                className="validate"
               />
               <button
                 style={{
