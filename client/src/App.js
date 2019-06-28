@@ -8,7 +8,8 @@ import {
   Register,
   RegisterEmployer,
   RegisterUser,
-  ResumeForm
+  ResumeForm,
+  EmployerLogin
 } from './components/layouts'
 import "./App.css";
 
@@ -23,6 +24,7 @@ class App extends Component {
             <Route exact path='/resumeform' component={ResumeForm} />
             <Route exact path="/about" component={About} />
             <Route exact path='/login' component={Login} />
+            <Route exact path='/employerlogin' component={EmployerLogin} />
             <Route exact path='/register' component={Register} />
             <Route exact path='/registeruser' component={RegisterUser} />
             <Route exact path='/registeremployer' component={RegisterEmployer} />
