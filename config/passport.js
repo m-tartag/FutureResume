@@ -1,6 +1,7 @@
 const JwtStrategy = require("passport-jwt").Strategy;
 const ExtractJwt = require("passport-jwt").ExtractJwt;
 const User = require('../models/User');
+const Employer = require('../models/Employer');
 const keys = require("../config/keys");
 
 const opts = {};
@@ -14,6 +15,13 @@ module.exports = passport => {
         .then(user => {
           if (user) {
             return done(null, user);
+          } else if (!user){
+            Employer.findById(jwt_payload.id)
+            .then(employer => {
+              if (employer){
+                return done(null, employer)
+              }
+            })
           }
           return done(null, false);
         })
