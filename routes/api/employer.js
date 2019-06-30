@@ -145,7 +145,8 @@ router.post("/login", (req, res) => {
 // @route Get api/employer/
 // @desc Get all resumes in database
 // @access Private
-router.get("/resumes", (req, res) => {
+router.get("/resumes", // passport.authenticate("jwt", { session: false }),
+(req, res) => {
   const errors = {};
   Resume.find()
     .sort({ date: -1 })
