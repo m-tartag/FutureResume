@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Jumbotron } from 'reactstrap';
 
-class UserDashboard extends Component {
+class EmployerDashboard extends Component {
   render() {
     return (
       <div>
@@ -16,4 +16,4 @@ class UserDashboard extends Component {
   }
 
 
-export default UserDashboard;
+export default EmployerDashboard;
