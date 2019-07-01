@@ -9,9 +9,9 @@ import {
   RegisterEmployer,
   RegisterUser,
   ResumeForm,
+  EmployerLogin
 } from './components/layouts'
 
-import EmployerLogin from './components/layouts/EmployerLogin'
 import "./App.css";
 
 class App extends Component {
