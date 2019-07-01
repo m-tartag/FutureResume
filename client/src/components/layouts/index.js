@@ -2,7 +2,7 @@ import About from './About';
 import Landing from './Landing';
 import Login from './Login';
 import Register from './Register';
-import Navbar from './Navbar';
+import Header from './Header';
 import RegisterEmployer from './RegisterEmployer';
 import RegisterUser from './RegisterUser';
 import ResumeForm from './ResumeForm';
@@ -13,7 +13,7 @@ export {
   Landing,
   Login,
   Register,
-  Navbar,
+  Header,
   RegisterEmployer,
   RegisterUser,
   ResumeForm,
