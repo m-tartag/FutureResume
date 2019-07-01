@@ -14,8 +14,6 @@ import {
 import EmployerLogin from './components/layouts/EmployerLogin'
 import "./App.css";
 
-
-
 class App extends Component {
   render() {
     return (
@@ -31,9 +29,7 @@ class App extends Component {
             <Route exact path='/register' component={Register} />
             <Route exact path='/registeruser' component={RegisterUser} />
             <Route exact path='/registeremployer' component={RegisterEmployer} />
-
           </Switch>
-        {/* <ResumeForm /> */}
       </div>
       </Router>
     );

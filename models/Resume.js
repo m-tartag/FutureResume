@@ -6,7 +6,7 @@ const { Schema } = mongoose;
 const ResumeSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
-    ref: 'users'
+    ref: 'users',
   },
   firstName: {
     type: String,
@@ -42,61 +42,61 @@ const ResumeSchema = new Schema({
   },
   skills: {
     type: [String],
-    required: true
+    required: true,
   },
   experience: [
     {
-    title: {
-      type: String,
-      required: true
+      title: {
+        type: String,
+        required: true,
+      },
+      company: {
+        type: String,
+        required: true,
+      },
+      location: {
+        type: String,
+      },
+      from: {
+        type: Date,
+        required: true,
+      },
+      to: {
+        type: Date,
+      },
+      current: {
+        type: Boolean,
+        default: false,
+      },
+      jobDescription: {
+        type: String,
+        required: true,
+      },
     },
-    company: {
-      type: String,
-      required: true
+  ],
+  education: [
+    {
+      school: {
+        type: String,
+        required: true,
+      },
+      degree: {
+        type: String,
+      },
+      fieldOfStudy: {
+        type: String,
+        required: true,
+      },
+      from: {
+        type: Date,
+        required: true,
+      },
+      to: {
+        type: Date,
+        required: true,
+      },
     },
-    location: {
-      type: String
-    },
-    from: {
-      type: Date,
-      required: true
-    },
-    to: {
-      type: Date
-    },
-    current: {
-      type: Boolean,
-      default: false
-    },
-    jobDescription: {
-      type: String,
-      required: true
-    }
-  }
-],
-education: [
-  {
-    school: {
-      type: String,
-      required: true
-    },
-    degree: {
-      type: String,
-    },
-    fieldOfStudy:{
-      type: String,
-      required: true
-    },
-    from: {
-      type: Date,
-      required: true
-    },
-    to: {
-      type: Date,
-      required: true
-    }
-  }
-],
+  ],
   social: {
     githubURL: {
       type: String,
@@ -107,12 +107,11 @@ education: [
       required: true,
     },
     linkedin: {
-      type: String
+      type: String,
     },
     personalWebsiteURL: {
       type: String,
     },
-    
   },
   aboutMeStatement: {
     type: String,

@@ -10,7 +10,7 @@ const keys = require('./config/keys');
 
 const app = express();
 
-// Enable Cors
+// Enable Cors Middleware
 app.use(cors());
 
 // Middleware BodyParser
