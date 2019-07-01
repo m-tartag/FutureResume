@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import {
@@ -22,6 +22,7 @@ const App = () => (
   
   <Provider store={store}>
     <Router>
+      <div className='App'>
         <Navbar />
         <Switch>
           <Route exact path="/" component={Landing} />
@@ -33,6 +34,7 @@ const App = () => (
           <Route exact path="/registeruser" component={RegisterUser} />
           <Route exact path="/registeremployer" component={RegisterEmployer} />
         </Switch>
+        </div>
     </Router>
   </Provider>
 );
