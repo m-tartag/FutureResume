@@ -5,7 +5,7 @@ import {
   About,
   Landing,
   Login,
-  Header,
+  Navbar,
   Register,
   RegisterEmployer,
   RegisterUser,
@@ -19,10 +19,10 @@ import store from './store';
 import './App.css';
 
 const App = () => (
+  
   <Provider store={store}>
     <Router>
-      
-        <Header />
+        <Navbar />
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/resumeform" component={ResumeForm} />
@@ -33,7 +33,6 @@ const App = () => (
           <Route exact path="/registeruser" component={RegisterUser} />
           <Route exact path="/registeremployer" component={RegisterEmployer} />
         </Switch>
-     
     </Router>
   </Provider>
 );
