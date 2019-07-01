@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import RegisterEmployer from './RegisterEmployer';
 import RegisterUser from './RegisterUser';
 import ResumeForm from './ResumeForm';
+import EmployerLogin from './EmployerLogin';
 
 export {
   About,
@@ -16,4 +17,5 @@ export {
   RegisterEmployer,
   RegisterUser,
   ResumeForm,
+  EmployerLogin
 };
