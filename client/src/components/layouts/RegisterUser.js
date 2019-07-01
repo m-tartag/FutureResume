@@ -1,4 +1,8 @@
 import React, { Fragment, useState } from "react";
+
+import { connect } from 'react-redux';
+import { setAlert } from '../../actions/alert';
+
 import axios from 'axios';
 
 const RegisterUser = () => {
