@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Provider } from 'react-redux';
+
+// Components
 import {
   About,
   Landing,
@@ -14,12 +15,13 @@ import {
 } from './components/layouts';
 
 // Redux
+import { Provider } from 'react-redux';
 import store from './store';
 
+// Global Styles
 import './App.css';
 
 const App = () => (
-  
   <Provider store={store}>
     <Router>
       <div className='App'>
