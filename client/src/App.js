@@ -10,7 +10,6 @@ import {
   RegisterEmployer,
   RegisterUser,
   ResumeForm,
-
   EmployerLogin,
 } from './components/layouts';
 
